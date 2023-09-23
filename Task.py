@@ -1,14 +1,16 @@
 # Define a function that prints numbers from 1 to 10
 
-import selenium
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 
 # Using Chrome to access web
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
+#driver.get("https://www.selenium.dev/selenium/web/web-form.html")
 
-import Selenium
-
-driver = webdriver.Chrome()
 
 def print_numbers():
-    print("Hello World")
+    driver = webdriver.Chrome()
+    driver.get("https://www.instagram.com")
+    driver.implicitly_wait(20)
+    text_box = driver.find_element(by=By.NAME, value = "test")
