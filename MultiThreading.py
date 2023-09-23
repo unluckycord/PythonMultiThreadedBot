@@ -2,16 +2,20 @@ import threading
 
 from Task import print_numbers
 
-# Create two threads that will run the print_numbers function
-thread1 = threading.Thread(target=print_numbers)
-thread2 = threading.Thread(target=print_numbers)
+# Create a specific thread amount that will run the print_numbers function
+
+threads = []
+
+for i in range(10):
+    thread = threading.Thread(target=print_numbers)
+    threads.append(thread)
 
 # Start the threads
-thread1.start()
-thread2.start()
+for thread in threads:
+    thread.start()
 
 # Wait for both threads to finish
-thread1.join()
-thread2.join()
+for thread in threads:
+    thread.join()
 
-print("Both threads have finished.")
+print ("Task Complete")
