@@ -1,13 +1,13 @@
 import threading
 
-from Task import print_numbers
+from Task import Access_Accounts
 
 # Create a specific thread amount that will run the print_numbers function
 
 threads = []
 
 for i in range(10):
-    thread = threading.Thread(target=print_numbers)
+    thread = threading.Thread(target=Access_Accounts)
     threads.append(thread)
 
 # Start the threads

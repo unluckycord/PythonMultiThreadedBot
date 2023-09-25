@@ -9,8 +9,13 @@ from selenium.webdriver.common.by import By
 #driver.get("https://www.selenium.dev/selenium/web/web-form.html")
 
 
-def print_numbers():
+def Access_Accounts():
     driver = webdriver.Chrome()
     driver.get("https://www.instagram.com")
     driver.implicitly_wait(20)
-    text_box = driver.find_element(by=By.NAME, value = "test")
+    username = driver.find_element(by=By.NAME, value = "username")
+    username.clear
+    username.send_keys("testemail@gmail.com")
+    password = driver.find_element(by=By.NAME, value = "password")
+    password.clear
+    password.send_keys("password")
