@@ -9,8 +9,13 @@ from selenium.webdriver.common.by import By
 #driver.get("https://www.selenium.dev/selenium/web/web-form.html")
 
 
-def Access_Accounts():
+def init():
     driver = webdriver.Chrome()
+    Access_Accounts(driver)
+    Action_Carried_Out(driver)
+
+
+def Access_Accounts(driver):
     driver.get("https://www.instagram.com")
     #print(driver.page_source)
     driver.implicitly_wait(20)
@@ -23,5 +28,7 @@ def Access_Accounts():
     driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]/button/div').click()
     driver.implicitly_wait(60)
     driver.find_element(By.XPATH, '/html/body')
+
+def Action_Carried_Out(driver):
     driver.find_element(By.XPATH, '//*[@id="mount_0_0_VR"]/div/div/div[2]/div/div/div/div[1]/div[1]/div[1]/div/div/div/div/div[2]/div[2]/span/div/a/div/div[1]/div/div/svg/path').click()
     #driver.find_element(By.NAME, "Log in").click()
