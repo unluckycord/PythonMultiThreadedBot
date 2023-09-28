@@ -12,7 +12,7 @@ from PasswordGen import PasswordGenerator
 
 
 def init():
-    driver = webdriver.Chrome()
+    driver = webdriver.Firefox()
     website = "https://www.instagram.com"
     driver.get(website)
     
