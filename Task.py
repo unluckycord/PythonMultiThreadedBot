@@ -1,4 +1,5 @@
 # Define a function that prints numbers from 1 to 10
+import UsernameGen, PasswordGen
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -14,6 +15,9 @@ def init():
     driver = webdriver.Chrome()
     website = "https://www.instagram.com"
     driver.get(website)
+    
+    UsernameGen.LoadNames()
+
     if(website == "https://www.instagram.com"):
         Instagram_Account_Access(driver)
         Action_Carried_Out(driver)
@@ -26,10 +30,10 @@ def Instagram_Account_Access(driver):
     driver.implicitly_wait(20)
     username = driver.find_element(by=By.NAME, value = "username")
     username.clear
-    username.send_keys('username')
+    username.send_keys(UsernameGen.UsernameGenerator())
     password = driver.find_element(by=By.NAME, value = "password")
     password.clear
-    password.send_keys(PasswordGenerator)
+    password.send_keys(str(PasswordGenerator))
     driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]/button/div').click()
     driver.implicitly_wait(60)
 

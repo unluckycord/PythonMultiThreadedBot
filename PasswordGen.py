@@ -18,6 +18,3 @@ def PasswordGenerator(PasswordLength):
 
     #returns password to be used
     return password
-
-if __name__ == "__main__":
-    print(PasswordGenerator(30))
