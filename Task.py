@@ -2,6 +2,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from PasswordGen import PasswordGenerator
 
 
 # Using Chrome to access web
@@ -28,7 +29,7 @@ def Instagram_Account_Access(driver):
     username.send_keys('username')
     password = driver.find_element(by=By.NAME, value = "password")
     password.clear
-    password.send_keys('password')
+    password.send_keys(PasswordGenerator)
     driver.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]/button/div').click()
     driver.implicitly_wait(60)
 
